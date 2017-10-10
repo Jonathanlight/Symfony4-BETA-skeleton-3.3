@@ -204,4 +204,4 @@ framework | php | symfony | symfony-bundle | bundle | psr-3 | psr-11 | psr-6 | p
 http://symfony.com/blog/standardizing-the-github-topics-for-symfony-repositories
 
 #Source Webographie
-https://speakerdeck.com/saro0h/symfonylive-paris-quoi-de-neuf-depuis-1-an
+https://speakerdeck.com/saro0h/symfonylive-paris-quoi-de-neuf-depuis-1-an 
