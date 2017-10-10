@@ -1,11 +1,8 @@
-# Symfony4-BETA-skeleton-3.3
--
-#        Feature Symphony 3.3 -> 4       
+# =========================================
+# =       Feature Symphony 3.3 -> 4       =
 # =========================================
 
 #Source BETA de Symfony 4 -> symfony/skeleton:^3.3
-# =========================================
-
 Require PHP-7.*
 composer create-project "symfony/skeleton:^3.3" demo
 cd demo
@@ -14,8 +11,7 @@ run `make serve`
 Browse to the http://localhost:8000
 
 #Répertoire
-# =========================================
-
+—————————————
 bin/
 config/
 public/
@@ -31,8 +27,6 @@ composer.json
 
 
 #Package composer
-# =========================================
-
 `req` est le raccourci de `require`
 
 composer req webserver
@@ -52,12 +46,17 @@ composer req log : installer MonologBundle et toutes ses dépendances;
 composer req template : pour Twig;
 composer req mailer : pour Swiftmailer;
 composer req profiler : pour le profiler;
+
 composer req debug-pack
+composer req doctrine/doctrine-bundle
+composer req doctrine/orm
+composer raq sensio/generator-bundle
+
+composer req symfony/validator
+composer req symfony/form
 
 
 #Cache:clear avec warmup
-# =========================================
-
 Before
 ./bin/console cache:clear (— -env=prod or dev)
 Now
@@ -65,15 +64,11 @@ Now
 ./bin/console cache:warmup (— -env=prod or dev)
 
 #Composant ClassLoader
-# =========================================
-
 si vous utilisez PHP 7 et la version 3.3 vous pouvez dores et déjà
 tester en supprimant la ligne $kernel->loadClassCache(); dans votre
 controller
 
 #On en a fini avec SYMFONY_
-# =========================================
-
 SYMFONY_ ne sera plus interprété en version 4.x
 
 il faut utiliser: %env()% (à partir de 3.2.x)
@@ -84,8 +79,6 @@ parameters:
 env(DATABASE_HOST): localhost
 
 #Insensibilité à la casse des identifients de services
-# =========================================
-
 services:
     MyService:
         class: AppBundle\RamdomClass
@@ -95,8 +88,6 @@ services:
         class: AppBundle\AnotherClass
 
 #Flash message
-# =========================================
-
 Before : app.session.started
 Now : app.flashes
 
@@ -119,10 +110,7 @@ Now : app.flashes
 {% endfor %}
 
 #Le username des utilisateurs in memory
-# =========================================
-
 #ne sont plus normalisés
-# =========================================
 
 Before
 foo-bar@gmail.com -> foo_bar@gmail.com
@@ -131,7 +119,6 @@ Now
 foo-bar@gmail.com -> foo-bar@gmail.com
 
 #Symfony\Bundle\FrameworkBundle\Controller\Controller
-# =========================================
 
 . On encourage plus à utiliser le
 Symfony\Bundle\FrameworkBundle\Controller\AbstractController
@@ -142,15 +129,11 @@ container via la methode get()
 .Encourager la déclaration des dépendances dans son controller
 
 #Recherche dans le contenu d'un dump()
-# =========================================
-
 -dans la WebDebugToolbar
 -dans le profiler
 -dans une page
 
 #Implementation de la psr-16
-# =========================================
-
 getMultiple($value)
 setMultiple($value, $ttl = null)
 deleteMultiple($value)
@@ -173,22 +156,16 @@ $cache->delete('stats.num_products');
 ```
 
 #Implementation de la psr-11
-# =========================================
-
 Symfony\Component\DependencyIngection\ContainerInterface
 étend la Psr\Container\ContainerInterface
 get() & has()
 2 nouvelles Exceptions: ContainerExceptionInterface & NotFoundExceptionInterface
 
 #WebserverBundle
-# =========================================
-
 .code déplacé
 . $ bin/console server:start trouve un port disponible pour vous.
 
 #FQCN comme id de service
-# =========================================
-
 -Before
 ```
 services:
@@ -218,20 +195,13 @@ public function editAction(){
 ```
 
 #Nouveau data collector : cache dans le profiler
-# =========================================
 
 #Composant Dotenv
-# =========================================
-
 Charge, parse vos fichiers .env et popule vos variable d'environnement
 
 #Topics sur github
-# =========================================
-
 framework | php | symfony | symfony-bundle | bundle | psr-3 | psr-11 | psr-6 | psr-16
 http://symfony.com/blog/standardizing-the-github-topics-for-symfony-repositories
 
 #Source Webographie
-# =========================================
-
 https://speakerdeck.com/saro0h/symfonylive-paris-quoi-de-neuf-depuis-1-an
