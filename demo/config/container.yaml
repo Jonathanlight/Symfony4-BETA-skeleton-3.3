@@ -1,0 +1,7 @@
+framework:
+    translator: { fallbacks: [en] }
+
+fos_user:
+    db_driver: orm
+    firewall_name: api
+    user_class: App\Entity\User

@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+<div class="container">
+    {% for message in app.flashes('notice') %}
+    <div class='alert alert-notice'>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <div class="starter-template">
+        <h1>List Product</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for reponse in reponses %}
+            <tr>
+                <td>{{ reponse.id }}</td>
+                <td>{{ reponse.name }} </td>
+                <td>{{ reponse.price }} euro</td>
+                <td>{{ reponse.description }}</td>
+                <td>
+                    <a href="{{ url('edit', {'id': reponse.id }) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ url('delete', {'id': reponse.id }) }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="starter-template">
+        <h1>Formulaire</h1>
+    </div>
+
+    <ul class="well">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_row(form.name, {'attr': {'class': 'form-control', 'placeholder':'Name product'}}) }}
+        {{ form_row(form.price, {'attr': {'class': 'form-control', 'placeholder':'Price product'}}) }}
+        {{ form_row(form.description, {'attr': {'class': 'form-control', 'placeholder':'Description product'}}) }}
+        {{ form_row(form.save, {'attr': {'class': 'btn btn-success'}}) }}
+        {{ form_end(form) }}
+    </ul>
+
+</div>
+{% endblock %}
+
+
